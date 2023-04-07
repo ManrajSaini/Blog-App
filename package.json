@@ -1,13 +1,12 @@
 {
-  "name": "server",
+  "name": "Blog-Website",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
   "scripts": {
   "start": "node server.js",
-  "build": "npm run client-build && npm run server-build",
-  "client-build": "cd client && npm run build",
-  "server-build": "webpack --config=Scripts/config/webpack.prod.js"
+  "build": "cd client && npm install && npm run build",
+  "dev": "concurrently \"cd client && npm start\" \"nodemon server.js\""
 },
   "author": "",
   "license": "ISC",
@@ -24,8 +23,13 @@
     "multer-gridfs-storage": "^5.0.2"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
     "nodemon": "^2.0.16"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "client": {
+    "name": "client",
+    "proxy": "http://localhost:5000"
+  }
 }
