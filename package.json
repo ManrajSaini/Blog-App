@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "client-install": "cd client && npm install",
-    "client-build": "cd client && npm run build"
+    "client-build": "cd client && npm run build",
+    "dev": "webpack --config=Scripts/config/webpack.dev.js --watch",
+    "build": "webpack --config=Scripts/config/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
